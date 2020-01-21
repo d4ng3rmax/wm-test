@@ -4,44 +4,36 @@
     <div class="col-6">
       <div class="row">
 
-        <div class="col-6 pd-0">
-          <div class="input-group">
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Dropdown</button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div>
-          </div>
+        <div>
+          <label>Selecione uma classe:</label>
+          <select #classtt (change)="0">
+            <option value="alert alert-success">Sucesso</option>
+            <option value="alert alert-primary">padrão</option>
+            <option value="alert alert-danger">Erro</option>
+          </select>
         </div>
 
-        <div class="col-6 pd-0">
-          <div class="input-group">
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Dropdown</button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div [ngClass]="classtt.value" role="alert">classe: {{classtt.value}}</div>
 
       </div>
     </div><!-- // col-6 -->
 
-    <div class="col-6"></div>
+    <div class="col-6">
+
+      <div class="mb-3">
+        <label for="username">Username</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">@</span>
+          </div>
+          <input type="text" class="form-control" id="username" placeholder="Username" required>
+          <div class="invalid-feedback" style="width: 100%;">
+            Your username is required.
+          </div>
+        </div>
+      </div>
+
+    </div>
 
 
 
